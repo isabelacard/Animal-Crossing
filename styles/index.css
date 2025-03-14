@@ -22,6 +22,7 @@ header{
     height: 100px;
     width: 100%;
     position: fixed;
+    z-index: 1000;
 }
 
 .menu{
@@ -186,7 +187,7 @@ header{
     padding: 40px 40px 40px 300px;
 }
 
-.imgmariana{
+#imgmariana{
     position: absolute;
     top: 800px;
     left: 0px;
@@ -199,8 +200,90 @@ header{
     padding: 40px 300px 40px 40px;
 }
 
-.imgisabela{
+#imgisabela{
     position: absolute;
     top: 800px;
     right: 0px;
+    z-index: 1;
+}
+
+/* INICIO CALL TO ACTION */
+
+
+.calltoaction{
+    width: 100%;
+    height: 450px;
+    background-color: rgb(96, 108, 196);
+    background-image: url(../assets/backcta.png);
+}
+
+.calltoactioncontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    gap: 25px;
+
+    h1{
+        color: #67C46B;
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    button{
+        color: #F5F5F5;
+        font-size: 20px;
+        font-weight: 500;
+        border-radius: 30px;
+        background: #67C46B;
+        padding: 15px 60px;
+        border: none; 
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        color: gray;
+    }
+}
+
+#registerhere{
+    color: #4C3423 ;
+}
+
+#registerhere:hover {
+    color: gray;
+}
+
+#phrase{
+    color: #4C3423;
+    font-size: 18px;
+    font-weight: 450;
+    text-align: center;
+}
+
+#register{
+    color: #4C3423;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#imgcharacter1{
+    width: 280px;
+    position: absolute;
+    left: 60px;
+    top: 1300px;
+    z-index: 1;
+}
+
+#imgcharacter2{
+    width: 280px;
+    position: absolute;
+    right: 60px;
+    top: 1300px;
+    z-index: 1;
 }
