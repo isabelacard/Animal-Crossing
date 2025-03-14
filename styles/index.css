@@ -129,3 +129,68 @@ header{
 
 }
 
+
+/* INICIO ABOUT US */
+
+
+.aboutus{
+    width: 100%;
+    height: 590px;
+    background-image: url(../assets/backus.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.whoarewecontainer{
+    text-align: center;
+    padding: 50px 310px 0px 310px;
+
+    h1{
+        color: #000;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    p{
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+.characterscontainer{
+    display: flex;
+    padding-top: 80px;
+    justify-content: space-between;
+    align-items: center;
+
+    h1{
+        color: #4E433B;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    p{
+        color: #472E1B;
+        font-size: 16px;
+        font-weight: 500;
+        width: 220px;
+    }
+}
+
+.marianacontainer{
+    text-align: right;
+    border-radius: 0px 25px 25px 0px;
+    background: #BDE4E1;
+    padding: 40px 40px 40px 300px;
+}
+
+
+.isabelacontainer{
+    text-align: left;
+    border-radius: 25px 0px 0px 25px;
+    background: #BDE4E1;
+    padding: 40px 300px 40px 40px;
+}
+
