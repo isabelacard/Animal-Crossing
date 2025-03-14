@@ -186,6 +186,11 @@ header{
     padding: 40px 40px 40px 300px;
 }
 
+.imgmariana{
+    position: absolute;
+    top: 800px;
+    left: 0px;
+}
 
 .isabelacontainer{
     text-align: left;
@@ -194,3 +199,8 @@ header{
     padding: 40px 300px 40px 40px;
 }
 
+.imgisabela{
+    position: absolute;
+    top: 800px;
+    right: 0px;
+}
