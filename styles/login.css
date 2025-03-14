@@ -1,0 +1,79 @@
+body {
+    background-size: cover;
+    background-image: url(../assets/backsignupandlogin.png);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Fredoka';font-size: 22px;
+    padding-top: 15px;
+       
+}
+
+
+.cuadro1 {
+    background-color: white;
+    width: 450px;
+    height: 590px;
+    border-radius: 40px;
+    margin-right: 25px;
+    text-align: center;
+    
+    
+    
+    
+}
+
+.titulo1 {
+    
+    
+    padding-top: 1px;
+    padding-bottom: 25px;
+    color: #4C3423;
+}
+
+.form{
+    font-size: small;
+}
+
+.campos {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 50px;
+    
+    
+    
+    
+    
+}
+
+.campos input {
+    width: 90%;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-family: 'Fredoka';font-size: 15px;
+    background-color: #D9D9D9;
+    
+}
+
+.login-btn {
+    width: 300px;
+    background-color: #EDD35B;
+    border-radius: 20px;
+    border: none;
+    color: #4C3423;
+    padding: 10px;
+    font-family: 'Fredoka';font-size: 15px;
+    font-size: large;
+    margin-top: 20px;
+  
+}
+
+.login-btn:hover {
+    background-color: #67C46B
+    
+}
+
