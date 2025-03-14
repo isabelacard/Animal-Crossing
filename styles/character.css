@@ -1,0 +1,143 @@
+*{
+    font-family: "Fredoka";
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/backcharacter.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* INICIO HEADER */
+
+header{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.menu{
+    margin-top: 10px;
+    width: 90%;
+    height: 90px;
+    border-radius: 6000px;
+    background: #67C46B;
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content:center;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+
+.logo{
+    width: 170px;
+}
+
+
+.navigation{
+    margin: right 0;
+}
+
+
+.nav-items{
+    display: flex;
+    align-items: center;
+    gap: 62px;
+}
+
+
+.nav-items li{
+    list-style: none;
+}
+
+
+.nav-items li a{
+    color: #4C3423;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.nav-items li a:hover {
+    color: gray;
+}
+
+
+.nav-items .logoutbutton{
+    background-color: #4C3423; 
+    color: white; 
+    border-radius: 1000px;
+    padding: 10px 40px;
+    text-decoration: none;
+}
+
+.nav-items .logoutbutton:hover{
+    color: gray;
+}
+
+/* INICIO CHARACTER */
+
+
+/* INFO */
+
+.imgcharacter{
+    position: absolute;
+    z-index: 1;
+    margin-top: 150px;
+    margin-left: 150px;
+}
+
+.tittles{
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    padding-left: 500px;
+}
+
+.containertittles{
+    margin-bottom: 60px;
+}
+
+#name{
+    color: #4C3423;
+    font-size: 86px;
+    font-weight: 500;
+}
+
+#phrase{
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* FIRST INFO */
+
+.firstinfo{
+    display: flex;
+}
+
+td{
+    padding: 0px 60px 20px 60px;
+}
