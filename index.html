@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eda95ca3ea.js" crossorigin="anonymous"></script>
     <title>Animal Crossing | Home</title>
     <link rel="stylesheet" href="./styles/index.css">
 </head>
@@ -78,30 +79,38 @@
     </section>
 
     <footer>
-        <section class="footer">
+        <section class="containerfooter">
+            <!--  -->
             <div class="containerimgg">
                 <img src="./assets/logo.png" alt="" class="footerlogo">
             </div>
-            
+            <!--  -->
             <div class="containerlocationfollow">
                 <div class="location">
-                    <h2>Location</h2>
+                    <h2 id="titlefooter">Location</h2>
                     <p>Cl. 18 #122-135, Barrio Pance, Cali, Valle del Cauca</p>
                 </div>
-
+                <!--  -->
                 <div class="followus">
-                    <h2>Follow us</h2>
+                    <h2 id="titlefooter">Follow us</h2>
+                    <div class="icons">
+                    <a href="https://www.instagram.com/animalcrossing_official/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/groups/137842564900921/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://animalcrossing.nintendo.com/new-horizons/es/" target="_blank"><i class="fa-brands fa-google"></i></a>
+                    </div>
                 </div>
             </div>
 
             <div class="containerform">
-                <h2>Contact form</h2>
+                <h2 id="titlefooter">Contact form</h2>
                 <label for="nombre"></label>
-                <input type="text" id="nombre" name="nombre">
+                <input type="text" id="nombre" name="nombre" placeholder="Enter your name" required>
                 <label></label>
-                <input type="email" name="correo">
+                <input type="email" name="correo" placeholder="Enter a valid email address" required>
                 <label for="comentario"></label>
-                <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
+                <textarea id="comentario" name="comentario" rows="4" cols="50" placeholder="Enter your message" required></textarea>
+
+                <button type="submit" class="buttonfooter">Send</button>
             </div>
         </section>
     </footer>
