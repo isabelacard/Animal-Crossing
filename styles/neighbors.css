@@ -100,19 +100,19 @@ header{
 
 .search{
     width: 100%;
-    height: 350px;
-}
-
-.searchimg{
-    width: 100%;
-    height: 100%;
+    height: 360px;
+    background-image: url(/assets/backneighbors.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .searchcontainer{
-    position: absolute;
-    top: 32%;
-    left: 30%;
-    z-index: 1;
+    padding-top: 120px;
+    position: relative;
 }
 
 .searchcontainer input{
@@ -129,7 +129,7 @@ header{
 .searchneighbor .icono{
     position: absolute;
     left: 15px;
-    top: 10px;
+    top: 130px;
     color: #4C3423;
     font-size: 30px;
     justify-content: center;
@@ -148,6 +148,7 @@ header{
 }
 
 .cardneighbor{
+    position: relative;
     width: 210px;
     height: 260px;
     border-radius: 37px;
@@ -162,8 +163,10 @@ header{
 }
 
 .cardneighbor img{
-    width: 125px;
-    height: auto;
+    width: 130px;
+    height: 210px;
+    aspect-ratio: auto 150 / 179;
+    padding-bottom: 20px;
 }
 
 .cardneighbor:hover{
@@ -181,15 +184,16 @@ header{
 }
 
 .cardcontent{
+    position: absolute;
     display: flex;
     flex-direction: row;
     text-align: left;
     width: 100%;
-    padding: 10px 0px 5px 20px;
+    padding: 220px 0px 5px 20px;
 }
 
 .cardcontent .icon{
-    padding-left: 50%;
+    padding-left: 15%;
     font-size: 25px;
     color: #FFBE17;
 }
@@ -198,6 +202,8 @@ header{
     color: #4C3423;
     font-size: 17px;
     font-weight: 500;
+    width: 60%;
+    margin: 0;
 }
 
 /* INICIO FAVORITES*/
@@ -213,6 +219,33 @@ header{
     padding-left: 30px;
     padding-top: 50px;
 }
+
+.cardfavoriteneighbor{
+    position: relative;
+    width: 210px;
+    height: 260px;
+    border-radius: 37px;
+    background: #C2EFC2;
+    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.cardfavoriteneighbor img{
+    width: 130px;
+    height: 210px;
+    aspect-ratio: auto 150 / 179;
+    padding-bottom: 20px;
+}
+
+.cardfavoriteneighbor:hover{
+    background-color: #95e895;
+}
+
 
 #titlefavorites{
     flex-basis: 100%;
