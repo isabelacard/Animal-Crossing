@@ -340,3 +340,89 @@ footer{
     margin-right: 50px;
     gap: 20px;
 }
+
+.location{
+    padding-bottom: 40px;
+
+
+    p{
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-top: 3px;
+    text-align: center ;
+    justify-content: start;
+}
+
+
+.fa-instagram {
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.fa-facebook-f{
+    color: black;
+    font-size: 20px;
+}
+
+
+.fa-google{
+    color: black;
+    font-size: 20px;
+}
+
+
+
+
+.containerform{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+
+
+.containerform input,textarea{
+    width: 470px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.containerform textarea{
+    height: 40px;
+}
+
+
+.buttonfooter {
+    width: 20%;
+    height: 35px;
+    background-color: #67C46B;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.buttonfooter:hover{
+    color: #472E1B;
+}
+
