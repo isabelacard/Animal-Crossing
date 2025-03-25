@@ -5,53 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/profile.css">
     <link rel="shortcut icon" href="../assets/icono.ico" type="image/x-icon">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/eda95ca3ea.js" crossorigin="anonymous"></script>
+    <title>profile</title>
 </head>
 <body>
     <header>
         <div class="menu">
             <div class="container">
-                <img src="../assets/logo.png" alt="" class="logo">
+                <a href="./neighbors.html">
+                    <img src="../assets/logo.png" alt="" class="logo">
+                </a>
                 <div class="navegation">
                     <ul class="nav-items">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../pages/login.html">Log in</a></li>
-                        <li><a href="../pages/signup.html"  class="signupbutton" >Sign Up</a></li>
+                        <li><a href="./neighbors.html">Home</a></li>
+                        <li><a href="./profile.html">My profile</a></li>
+                        <li><a href="../index.html"  class="signupbutton" >Log out</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="cuadropro">
-        <h1 class="titulopro">My profile</h1>
-        <div class="formulario2">
-            <div class="profilee">
-                <div class="profile-pic2">
-                    <img src="../assets/profile-pic2.jpg" alt="Foto de perfil">
+    <section class="myprofile">
+        <div class="cuadropro">
+            <h1 class="titulopro">My profile</h1>
+            <div class="formulario2">
+                <div class="profilee">
+                    <div class="profile-pic2">
+                        <img src="../assets/profile-pic2.png" alt="Foto de perfil">
+                    </div>
+                    <div class="datos3">
+                        <h3 class="titulo">Name and surname</h3>
+                        <p class="texto">Santiago Varela</p>
+                        <h3 class="titulo">Email</h3>
+                        <p class="texto">tiaguisvarela@gmail.com</p>
+                    </div>
+                    <div class="datos4">
+                        <h3 class="titulo">User</h3>
+                        <p class="texto">Tiago123</p>
+                        <h3 class="titulo">Password</h3>
+                        <p class="texto">***********</p>
+                    </div>
                 </div>
-                <div class="datos3">
-                     <label for="name and surname">Name and surname</label>
-                     <p class="texto">Santiago Varela</p>
-                     <label for="email">Email</label>
-                     <p class="texto">tiaguisvarela@gmail.com</p>
+            </div>
+            <div class="change">
+                <p>¿Do you want to change your password? <a href="">Click here</a></p>
+            </div>
+        </div>
+    </section>
 
+    <footer>
+        <section class="containerfooter">
+            <!--  -->
+            <div class="containerimgg">
+                <a href="./neighbors.html">
+                    <img src="../assets/logo.png" alt="" class="footerlogo">
+                </a>
+            </div>
+            <!--  -->
+            <div class="containerlocationfollow">
+                <div class="location">
+                    <h2 id="titlefooter">Location</h2>
+                    <p>Cl. 18 #122-135, Barrio Pance, Cali, Valle del Cauca</p>
                 </div>
-                <div class="datos4">
-                     <label for="user">User</label>
-                     <p class="texto">Tiago123</p>
-                     <label for="password">Password</label>
-                     <p class="texto">***********</p>
+                <!--  -->
+                <div class="followus">
+                    <h2 id="titlefooter">Follow us</h2>
+                    <div class="icons">
+                    <a href="https://www.instagram.com/animalcrossing_official/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/groups/137842564900921/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://animalcrossing.nintendo.com/new-horizons/es/" target="_blank"><i class="fa-brands fa-google"></i></a>
+                    </div>
                 </div>
-                
             </div>
 
-        </div>
-        <div class="change">
-            <a href="">¿Do you want to change your password? Click here</a>
-        </div>
-    </div>
-    
+            <div class="containerform">
+                <h2 id="titlefooter">Contact form</h2>
+                <form>
+                    <label for="nombre"></label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Enter your name" required>
+                    <label></label>
+                    <input type="email" name="correo" placeholder="Enter a valid email address" required>
+                    <label for="comentario"></label>
+                    <textarea id="comentario" name="comentario" rows="4" cols="50" placeholder="Enter your message" required></textarea>
+                    <button type="submit" class="buttonfooter">Send</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="containerrights">
+            <p>© All Rights Reserved</p>
+        </section>
+    </footer>
 
 </body>
 </html>
