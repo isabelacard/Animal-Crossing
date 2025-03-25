@@ -1,36 +1,41 @@
+*{
+    font-family: "Fredoka";
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
 body {
     background-size: cover;
     background-image: url("../assets/backsignupandlogin.png");
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    justify-content: center;
     justify-content: flex-end;
-    font-family: 'Fredoka';font-size: 22px;
-    padding-top: 15px;
+    padding: 35px 0px 35px 0px;
+    overflow: hidden;
 }
 
 .cuadro2 {
     background-color: white;
-    width: 685px;
+    width: 630px;
     height: 590px;
-    border-radius: 40px;
-    margin-right: 10px;
+    border-radius: 40px 0px 0px 40px;
     text-align: center;
-    
-     
-
-
-
+    margin-top: 0px;
+}
 
 .titulo2 {
     color: #4C3423;
+    padding-bottom:10px ;
+    font-size: 40px;
 }
 
 .profile-pic img {
-    width: 125px;
-    height: 125px;
+    width: 115px;
     border-radius: 50%;
-    margin-bottom: 20px;
-
 }
 
 .profile-pic {
@@ -45,9 +50,6 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    
-    
-    
 }
 
 .campo1 {
@@ -55,10 +57,8 @@ body {
     flex-direction: row;
 }
 
-
-
 .datos input {
-    width: 400px;
+    width: 380px;
     padding: 10px;
     padding-left: 15px;
     border-radius: 10px;
@@ -67,72 +67,69 @@ body {
     font-family: 'Fredoka';font-size: 15px;
     background-color: #D9D9D9;
     margin-bottom: 20px;
-    
 }
 
 .datos2 {
-    position: relative;
     margin-bottom: 20px;
     margin-left: 60px;
     margin-right: 60px;
     display: flex;
-    justify-content: space-between; 
     gap: 10px;
 }
 
 .datos2 input {
-    width: 45%;
+    width: 50%;
     padding: 10px;
     padding-left: 15px;
     border-radius: 10px;
     outline: none;
     border: none;
-    font-family: 'Fredoka';font-size: 15px;
+    font-size: 15px;
     background-color: #D9D9D9;
-    
+    margin-bottom: 10px;
 }
 
-.signin-btn {
-    width: 300px;
+#signin-btn {
     background-color: #EDD35B;
     border-radius: 20px;
     border: none;
     color: #4C3423;
-    padding: 10px;
-    font-family: 'Fredoka';font-size: 15px;
-    font-size: large;
-    
-    
-  
+    padding: 10px 120px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-.signin-btn:hover {
-    background-color: #67C46B
-    
+#signin-btn:hover {
+    background-color: #e6c222
 }
 
 .piedepag3 {
-    font-size: 10px;
-    padding-top: 30px;
-    padding: 30px;
-    margin-left: 40px;
-    margin-right: 40px;
-    
+    font-size: 9px;
+    font-weight: 550;
+    width: 220px; 
+    text-decoration: none;
+    color: #4C3423;
+    display: flex;
+    justify-content: center; 
+    margin: 0 auto; 
+    text-align: center;
+    padding: 70px 1px 30px 1px;
 }
 
 .piedepag4 {
-    font-size: 10px;
-    
+    font-size: 11px;
+    font-weight: 550;
+    text-decoration: none;
+    color: #4C3423;
 }
 
 a {
     text-decoration: none;
     color: #4C3423;
-    
 }
 
 a:hover {
-    opacity: 70%;
-    
+    color: gray;
 }
 

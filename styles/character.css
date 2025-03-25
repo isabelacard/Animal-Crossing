@@ -8,7 +8,7 @@
 
 body{
     width: 100%;
-    height: 100%;
+    height: 100px;
     background-image: url(../assets/backcharacter.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,13 +46,15 @@ header{
     justify-content: space-between;
     padding-left: 90px;
     padding-right: 90px;
+    height: 100%;
 }
 
 
 .logo{
-    width: 170px;
+    width: 215px; 
+    height: auto; 
+    max-width: none;
 }
-
 
 .navigation{
     margin: right 0;
@@ -62,7 +64,7 @@ header{
 .nav-items{
     display: flex;
     align-items: center;
-    gap: 62px;
+    gap: 40px;
 }
 
 
@@ -85,7 +87,7 @@ header{
 }
 
 
-.nav-items .logoutbutton{
+.nav-items .signupbutton{
     background-color: #4C3423; 
     color: white; 
     border-radius: 1000px;
@@ -93,9 +95,11 @@ header{
     text-decoration: none;
 }
 
-.nav-items .logoutbutton:hover{
-    color: gray;
+.nav-items .signupbutton:hover{
+    background-color: #41230e;
 }
+
+
 
 /* INICIO CHARACTER */
 
@@ -123,6 +127,8 @@ header{
     flex-direction: column;
     padding-top: 140px;
     padding-left: 500px;
+    width: 100%;
+    height: 670px;
 }
 
 .containertittles{
@@ -215,4 +221,148 @@ header{
 
 .secondword{
     color: #F2E495;
+}
+
+/* INICIO FOOTER */
+
+footer{
+    width: 100%;
+    height: 420px;
+    background-color: #FFF5BF;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerfooter{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footerlogo{
+    width: 350px;
+}
+.containerimgg{
+    display: flex;
+}
+
+#titlefooter{
+    color: #000;
+    text-align: start;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+.containerlocationfollow{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 300px;
+    margin-right: 50px;
+    gap: 20px;
+    padding-top: 5px;
+}
+
+.location{
+    padding-bottom: 20px;
+
+
+    p{
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-top: 3px;
+    text-align: center ;
+    justify-content: start;
+}
+
+
+.fa-instagram {
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.fa-facebook-f{
+    color: black;
+    font-size: 20px;
+}
+
+
+.fa-google{
+    color: black;
+    font-size: 20px;
+}
+
+
+form {
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    width: 100%;
+}
+
+.containerform{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 8px;
+}
+
+.containerform input,textarea{
+    width: 470px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.containerform textarea{
+    height: 40px;
+}
+
+
+.buttonfooter {
+    width: 15%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #67C46B;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.buttonfooter:hover{
+    color: gray;
+    background: #3db042;
+}
+
+/* rights */
+
+.containerrights {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1.5px solid #000;
+    width: 93%;
+    height: 30px;
+    margin: 20px auto;
+    flex-basis: 100%;
+    font-size: 12px;
+    font-weight: 400;
 }
