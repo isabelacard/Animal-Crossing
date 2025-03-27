@@ -102,7 +102,7 @@ header{
 
 .search{
     width: 100%;
-    height: 360px;
+    min-height: 60vh;
     background-image: url(/assets/backneighbors.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -142,7 +142,8 @@ header{
 .neighbors{
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 30px;
     flex-wrap: wrap;
     gap: 25px;
     width: 80%;
@@ -181,7 +182,7 @@ header{
     color: #000;
     font-size: 35px;
     font-weight: 500;
-    margin-left: 35px;
+    margin-left: 5px;
     margin-top: 90px;
 }
 
@@ -213,7 +214,7 @@ header{
 .favorites{
     margin: 0 auto;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 25px;
     width: 80%;
@@ -263,16 +264,22 @@ header{
 
 footer{
     width: 100%;
-    height: 420px;
+    min-height: 50vh;
     background-color: #FFF5BF;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .containerfooter{
     margin-top: 80px;
     display: flex;
     flex-direction: row;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    width: 100%; 
+    justify-content: space-between; 
 }
 
 .footerlogo{
@@ -287,6 +294,7 @@ footer{
     text-align: start;
     font-size: 30px;
     font-weight: 500;
+    width: 100%; 
 }
 
 
@@ -346,6 +354,7 @@ form {
     flex-direction: column; 
     gap: 10px; 
     width: 100%;
+    margin-right: 20px;
 }
 
 .containerform{

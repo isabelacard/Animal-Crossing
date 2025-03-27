@@ -9,9 +9,6 @@
 body{
     width: 100%;
     height: 100px;
-    background-image: url(../assets/backcharacter.png);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 
@@ -106,33 +103,45 @@ header{
 
 /* INFO */
 
+.charactercontainer{
+    position: relative; 
+    z-index: 2;
+    padding-left: 90px;
+}
+
 .imgcharacter{
-    position: absolute;
-    z-index: 1;
-    margin-top: 150px;
-    margin-left: 170px;
     width: 260px;
+    position: relative;
+    z-index: 2;
 }
 
 .ellipse{
     position: absolute;
-    margin-top: 520px;
-    margin-left: 175px;
-    z-index: 0;
     width: 250px;
+    top: 90%; 
+    left: 25%;
+    z-index: 1; 
 }
 
-.tittles{
+
+.charactersection{
+    background-image: url(../assets/backcharacter.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
     display: flex;
-    flex-direction: column;
-    padding-top: 140px;
-    padding-left: 500px;
+    flex-direction: row;
+    padding: 140px 10px 80px 10px;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 670px;
+    min-height: 50vh;
 }
 
 .containertittles{
     margin-bottom: 50px;
+    width: 690px;
 }
 
 #name{
@@ -227,16 +236,22 @@ header{
 
 footer{
     width: 100%;
-    height: 420px;
+    min-height: 50vh;
     background-color: #FFF5BF;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .containerfooter{
     margin-top: 80px;
     display: flex;
     flex-direction: row;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    width: 100%; 
+    justify-content: space-between; 
 }
 
 .footerlogo{
@@ -251,6 +266,7 @@ footer{
     text-align: start;
     font-size: 30px;
     font-weight: 500;
+    width: 100%; 
 }
 
 
@@ -310,6 +326,7 @@ form {
     flex-direction: column; 
     gap: 10px; 
     width: 100%;
+    margin-right: 20px;
 }
 
 .containerform{

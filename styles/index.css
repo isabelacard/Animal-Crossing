@@ -101,15 +101,19 @@ header{
 
 .banner{
     width: 100%;
-    height: 655px;
+    min-height: 100vh;
     background-image: url(../assets/backbanner.png);
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 
 .bannercontainer{
-    padding-top: 250px;
     margin: 0px 20px 0px 60px;
     width: 50%;
 }
@@ -138,12 +142,16 @@ header{
 
 .aboutus{
     width: 100%;
-    height: 590px;
+    min-height: 50vh;
     background-image: url(../assets/backus.png);
     background-color: rgba(255, 255, 255, 0.619); 
     background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -169,7 +177,8 @@ header{
     padding-top: 80px;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    padding-bottom: 80px; 
 
     h1{
         color: #4E433B;
@@ -186,29 +195,39 @@ header{
 }
 
 .marianacontainer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 80vh;
     text-align: right;
     border-radius: 0px 25px 25px 0px;
     background: #BDE4E1;
     padding: 40px 40px 40px 300px;
+    position: relative;
 }
 
 #imgmariana{
     position: absolute;
-    top: 800px;
     left: 0px;
     z-index: 1;
 }
 
 .isabelacontainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 80vh;
     text-align: left;
     border-radius: 25px 0px 0px 25px;
     background: #BDE4E1;
     padding: 40px 300px 40px 40px;
+    position: relative;
 }
 
 #imgisabela{
     position: absolute;
-    top: 800px;
     right: 0px;
     z-index: 1;
 }
@@ -218,11 +237,18 @@ header{
 
 .calltoaction{
     width: 100%;
-    height: 450px;
+    min-height: 50vh;
     background-color: rgb(96, 108, 196);
     background-image: url(../assets/backcta.png);
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0.626); 
     background-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .calltoactioncontainer{
@@ -232,6 +258,7 @@ header{
     align-items: center;
     height: 100%; 
     gap: 25px;
+    padding: 90px;
 
     h1{
         color: #67C46B;
@@ -283,7 +310,6 @@ header{
     width: 280px;
     position: absolute;
     left: 60px;
-    top: 1300px;
     z-index: 1;
 }
 
@@ -291,28 +317,28 @@ header{
     width: 280px;
     position: absolute;
     right: 60px;
-    top: 1300px;
     z-index: 1;
 }
 
 /* INICIO CARROUSEL */
 
 .carrousel{
-    width: 100%;
+    min-width: 80vh;
     height: 100%;
-    background-color: rgb(161, 161, 239);
 }
 
 .imgcarrousel{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* INICIO FOOTER */
 
 footer{
     width: 100%;
-    height: auto;
+    min-height: 50vh;
     background-color: #FFF5BF;
     display: flex;
     flex-direction: column;
