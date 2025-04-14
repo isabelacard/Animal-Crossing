@@ -103,7 +103,7 @@ header{
 .search{
     width: 100%;
     min-height: 60vh;
-    background-image: url(/assets/backneighbors.png);
+    background-image: url(../assets/backneighbors.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
