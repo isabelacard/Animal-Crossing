@@ -16,30 +16,25 @@
         <div class="imagen1">
             <img src="../assets/logo.png" alt="logo" width="200px">
         </div>
+
         <h1 class="titulo2">Create an account</h1>
 
-
-        <div class="formulario">
-
-            <form class="form1" action="./neighbors.html">
+        <div class="registroForm">
+            <form class="form1" id="input" action="./neighbors.html">
                 <div class="campo1">
                     <div class="profile-pic">
                         <img src="../assets/profile-pic.png" alt="Foto de perfil">
                     </div>
                     <div class="datos">
-
-                        <input type="name" placeholder="Name and surname" required>
-                        <input type="email" placeholder="Email" required>
+                        <input type="name" id="nameAndSurname" placeholder="Name and surname" required>
+                        <input type="email" id="email" placeholder="Email" required>
                     </div>
                 </div>
                 <div class="datos2">
-                    <input type="username" placeholder="User" required>
-                    <input type="password" placeholder="Password" required>
-
+                    <input type="text" id="user" placeholder="User" required>
+                    <input type="password" id="password" placeholder="Password" required>
                 </div>
-
-                <button id="signin-btn">Sign in</button>
-
+                <button id="signin-btn" type="submit">Sign in</button>
             </form>
 
             <div class="piedepag3">
@@ -50,3 +45,10 @@
                 <p>Do you have an account? <a href="./login.html">Log in</a></p>
             </div>
         </div>
+    </div>
+
+    <script src="../Javascript/signup.js"></script>
+
+</body>
+
+</html>
