@@ -1,3 +1,5 @@
+//QUIENES SOMOS
+
 const characters = [
     {
         name: "Mariana",
@@ -44,3 +46,14 @@ function renderCharacters() {
 }
 
 renderCharacters();
+
+
+//SCROLL CARROUSEL
+
+let current = 1;
+const total = 4; 
+
+setInterval(() => {
+    current = current % total + 1;
+    document.getElementById('slide' + current).checked = true;
+}, 3000);
