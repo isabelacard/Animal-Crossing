@@ -16,13 +16,14 @@ const neighbors = [
     { name: "Audie", image: "../assets/neighbor-audie.png" }
 ];
 
-// Separar vecinos del día (primeros 8) y favoritos (resto)
 const neighborsOfTheDay = neighbors.slice(0, 8);
 const favoriteNeighbors = neighbors.slice(8);
 
-// Función para crear tarjetas
 function renderNeighbors(neighborsArray, containerSelector) {
     const container = document.querySelector(containerSelector);
+
+    const cards = container.querySelectorAll('.cardneighbor');
+    cards.forEach(card => card.remove());
 
     neighborsArray.forEach(neighbor => {
         const card = document.createElement('a');
@@ -41,25 +42,54 @@ function renderNeighbors(neighborsArray, containerSelector) {
         name.id = 'nameneighbor';
 
         const icon = document.createElement('i');
-        icon.className = 'icon fa-regular fa-star'; // estrella vacía
+        icon.className = 'icon fa-regular fa-star';
 
-        // 🔁 Función para alternar favorito
         icon.addEventListener('click', function(event) {
-            event.preventDefault(); // evitar que el <a> recargue
+            event.preventDefault();
             icon.classList.toggle('fa-regular');
             icon.classList.toggle('fa-solid');
         });
 
         content.appendChild(name);
         content.appendChild(icon);
-
         card.appendChild(img);
         card.appendChild(content);
-
         container.appendChild(card);
     });
 }
 
-// Renderizar vecinos en sus respectivas secciones
 renderNeighbors(neighborsOfTheDay, '.neighbors');
 renderNeighbors(favoriteNeighbors, '.favorites');
+
+const searchInput = document.getElementById('search');
+if (searchInput) {
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+
+        const filteredNeighborsDay = neighborsOfTheDay.filter(n => n.name?.toLowerCase().includes(query));
+        const filteredFavorites = favoriteNeighbors.filter(n => n.name?.toLowerCase().includes(query));
+
+        renderNeighbors(filteredNeighborsDay, '.neighbors');
+        renderNeighbors(filteredFavorites, '.favorites');
+
+        const titleNeighbors = document.querySelector('.neighbors h2');
+        const titleFavorites = document.querySelector('.favorites h2');
+
+        const neighborsContainer = document.querySelector('.neighbors');
+        const favoritesContainer = document.querySelector('.favorites');
+
+        if (query.trim() !== '') {
+            if (titleNeighbors) titleNeighbors.style.display = 'none';
+            if (titleFavorites) titleFavorites.style.display = 'none';
+
+            if (neighborsContainer) neighborsContainer.style.paddingTop = '70px';
+            if (favoritesContainer) favoritesContainer.style.paddingTop = '20px';
+        } else {
+            if (titleNeighbors) titleNeighbors.style.display = '';
+            if (titleFavorites) titleFavorites.style.display = '';
+
+            if (neighborsContainer) neighborsContainer.style.paddingTop = '';
+            if (favoritesContainer) favoritesContainer.style.paddingTop = '';
+        }
+    });
+}
