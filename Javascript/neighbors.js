@@ -28,7 +28,8 @@ function renderNeighbors(neighborsArray, containerSelector) {
     neighborsArray.forEach(neighbor => {
         const card = document.createElement('a');
         card.classList.add('cardneighbor');
-        card.href = '#';
+        card.href = `./character.html?name=${encodeURIComponent(neighbor.name)}`;
+
 
         const img = document.createElement('img');
         img.src = neighbor.image;
