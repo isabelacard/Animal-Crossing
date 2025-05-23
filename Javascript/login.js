@@ -14,7 +14,6 @@ const usuarios = [
 ];
 localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-
 const loginForm = document.getElementById('loginForm');
 
 function ingresarUsuario(e) {
@@ -41,7 +40,6 @@ function ingresarUsuario(e) {
         email: existeUsuario.email
     };
     localStorage.setItem('logueado', JSON.stringify(usuarioLogueado));
-    window.location.href = '/index.html';
+    window.location.href = 'neighbors.html'; 
 }
-
 loginForm.addEventListener('submit', ingresarUsuario);
