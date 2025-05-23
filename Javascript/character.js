@@ -211,7 +211,7 @@ const neighbors = [
     },
     {
         name: "Audie",
-        image: ".../assets/characteroftheday12.png",
+        image: "../assets/characteroftheday12.png",
         phrase: "Be positive!",
         species: "Wolf",
         gender: "Female",
