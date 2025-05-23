@@ -2,7 +2,7 @@ const loginForm = document.getElementById('loginForm');
 
 function ingresarUsuario(e) {
     e.preventDefault()
-    const email = document.getElementById('email').value
+    const email = document.getElementById('user').value
     const password = document.getElementById('password').value
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
     const existeUsuario = usuarios.find((usuario) => usuario.email === email)
@@ -25,7 +25,7 @@ function ingresarUsuario(e) {
         email: existeUsuario.email
     }
     localStorage.setItem('logueado',JSON.stringify(usuarioLogueado))
-    window.location.href = 'index.html'
+    window.location.href = '/index.html'; 
 
 }
 
