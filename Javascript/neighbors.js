@@ -10,10 +10,10 @@ const neighbors = [
     { name: "Eloise", image: "../assets/favoriteneighbor1.png" },
     { name: "Roald", image: "../assets/favoriteneighbor2.png" },
     { name: "Labelle", image: "../assets/favoriteneighbor3.png" },
-    { name: "Raymond", image: "../assets/neighbor-raymond.png" },
-    { name: "Cherry", image: "../assets/neighbor-cherry.png" },
-    { name: "Marshal", image: "../assets/neighbor-marshal.png" },
-    { name: "Audie", image: "../assets/neighbor-audie.png" }
+    { name: "Raymond", image: "../assets/characteroftheday9.png" },
+    { name: "Cherry", image: "../assets/characteroftheday10.png" },
+    { name: "Marshal", image: "../assets/characteroftheday11.png" },
+    { name: "Audie", image: "../assets/characteroftheday12.png" }
 ];
 
 const neighborsOfTheDay = neighbors.slice(0, 8);
