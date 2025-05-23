@@ -226,11 +226,11 @@ const neighbors = [
     }
 ];
 
-const urlParams = new URLSearchParams(window.location.search);
-const characterName = urlParams.get("name");
+const busqueda = new URLSearchParams(window.location.search);
+const namee = busqueda.get("name");
 
 
-const character = neighbors.find(n => n.name.toLowerCase() === characterName?.toLowerCase());
+const character = neighbors.find(n => n.name.toLowerCase() === namee?.toLowerCase());
 
 if (character) {
     document.querySelector(".imgcharacter").src = character.image;
