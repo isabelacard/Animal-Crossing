@@ -108,3 +108,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     renderFavorites('.favorites', userFavorites);
 });
+
+//BUTTON FORM
+document.addEventListener('DOMContentLoaded', function() {
+    const footerForm = document.querySelector('footer form');
+    if (footerForm) {
+        footerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Mensaje enviado correctamente!');
+            footerForm.reset();
+        });
+    }
+});

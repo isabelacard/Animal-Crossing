@@ -57,3 +57,16 @@ setInterval(() => {
     current = current % total + 1;
     document.getElementById('slide' + current).checked = true;
 }, 3000);
+
+
+//BUTTON FORM
+document.addEventListener('DOMContentLoaded', function() {
+    const footerForm = document.querySelector('footer form');
+    if (footerForm) {
+        footerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Mensaje enviado correctamente!');
+            footerForm.reset();
+        });
+    }
+});
