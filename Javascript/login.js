@@ -1,14 +1,12 @@
 const usuariosPorDefecto = [
     {
-        nombre: "Mariana",
-        apellido: "Cerón",
+        nameAndSurname: "Mariana Cerón",
         email: "mariana@gmail.com",
         password: "1234",
         usuario: "marianacv"
     },
     {
-        nombre: "Isabela",
-        apellido: "Cardona",
+        nameAndSurname: "Isabela Cardona",
         email: "isabela@gmail.com",
         password: "abcd",
         usuario: "isabelacv"

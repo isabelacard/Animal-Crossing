@@ -11,7 +11,7 @@ function registrarUsuario(e) {
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
   const existeUsuario = usuarios.find(
-    (usuario) => usuario.email === emailValor || usuario.user === userValor
+  (usuario) => usuario.email === emailValor || usuario.usuario === userValor
   );
 
   if (existeUsuario) {
@@ -20,12 +20,12 @@ function registrarUsuario(e) {
     return;
   }
 
-  const usuario = {
-    nameAndSurname: nameAndSurnameValor,
+const usuario = {
+    nameAndSurname: nameAndSurnameValor, 
     email: emailValor,
     usuario: userValor,
     password: passwordValor,
-  };
+};
 
   usuarios.push(usuario);
   localStorage.setItem('usuarios', JSON.stringify(usuarios));

@@ -1,21 +1,21 @@
-const usuarios = [
+const usuariosPorDefecto = [
     {
-        nombre: "Mariana",
-        apellido: "Cerón",
+        nameAndSurname: "Mariana Cerón",
         email: "mariana@gmail.com",
         password: "1234",
-        usuario: "mariana" 
+        usuario: "marianacv"
     },
     {
-        nombre: "Isabela",
-        apellido: "Cardona",
+        nameAndSurname: "Isabela Cardona",
         email: "isabela@gmail.com",
         password: "abcd",
-        usuario: "isabela"
+        usuario: "isabelacv"
     },
 ];
 
-localStorage.setItem('usuarios', JSON.stringify(usuarios));
+if (!localStorage.getItem('usuarios')) {
+    localStorage.setItem('usuarios', JSON.stringify(usuariosPorDefecto));
+}
 
 const favoritosMariana = [
     { name: "Eloise", image: "../assets/favoriteneighbor1.png" },
@@ -29,11 +29,11 @@ const favoritosIsabela = [
     { name: "Rolf", image: "../assets/characteroftheday7.png" },
 ];
 
-if (!localStorage.getItem('favorites_mariana')) {
-    localStorage.setItem('favorites_mariana', JSON.stringify(favoritosMariana));
+if (!localStorage.getItem('favorites_marianacv')) {
+    localStorage.setItem('favorites_marianacv', JSON.stringify(favoritosMariana));
 }
-if (!localStorage.getItem('favorites_isabela')) {
-    localStorage.setItem('favorites_isabela', JSON.stringify(favoritosIsabela));
+if (!localStorage.getItem('favorites_isabelacv')) {
+    localStorage.setItem('favorites_isabelacv', JSON.stringify(favoritosIsabela));
 }
 
 function renderFavorites(containerSelector, neighbors) {
