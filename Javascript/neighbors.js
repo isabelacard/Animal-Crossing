@@ -81,31 +81,23 @@ const searchInput = document.getElementById('search');
 if (searchInput) {
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
+        
+        const filteredNeighbors = neighbors.filter(n => n.name?.toLowerCase().includes(query));
 
-        const filteredNeighborsDay = neighborsOfTheDay.filter(n => n.name?.toLowerCase().includes(query));
-        const filteredFavorites = discoverNeighbors.filter(n => n.name?.toLowerCase().includes(query));
+        renderNeighbors(filteredNeighbors, '.neighbors');
 
-        renderNeighbors(filteredNeighborsDay, '.neighbors');
-        renderNeighbors(filteredFavorites, '.favorites');
+        const favoritesContainer = document.querySelector('.favorites');
+        if (favoritesContainer) favoritesContainer.innerHTML = '';
 
         const titleNeighbors = document.querySelector('.neighbors h2');
-        const titleFavorites = document.querySelector('.favorites h2');
-
         const neighborsContainer = document.querySelector('.neighbors');
-        const favoritesContainer = document.querySelector('.favorites');
 
         if (query.trim() !== '') {
             if (titleNeighbors) titleNeighbors.style.display = 'none';
-            if (titleFavorites) titleFavorites.style.display = 'none';
-
             if (neighborsContainer) neighborsContainer.style.paddingTop = '70px';
-            if (favoritesContainer) favoritesContainer.style.paddingTop = '20px';
         } else {
             if (titleNeighbors) titleNeighbors.style.display = '';
-            if (titleFavorites) titleFavorites.style.display = '';
-
             if (neighborsContainer) neighborsContainer.style.paddingTop = '';
-            if (favoritesContainer) favoritesContainer.style.paddingTop = '';
         }
     });
 }
