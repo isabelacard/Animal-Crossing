@@ -3,15 +3,18 @@ const usuarios = [
         nombre: "Mariana",
         apellido: "Cerón",
         email: "mariana@gmail.com",
-        password: "1234"
+        password: "1234",
+        usuario: "mariana"
     },
     {
         nombre: "Isabela",
         apellido: "Cardona",
         email: "isabela@gmail.com",
-        password: "abcd"
+        password: "abcd",
+        usuario: "isabela"
     },
 ];
+
 localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
 const loginForm = document.getElementById('loginForm');
@@ -36,10 +39,15 @@ function ingresarUsuario(e) {
     }
 
     const usuarioLogueado = {
-        nombreCompleto: existeUsuario.nombre + " " + existeUsuario.apellido,
-        email: existeUsuario.email
+        nombre: existeUsuario.nombre,
+        apellido: existeUsuario.apellido,
+        email: existeUsuario.email,
+        password: existeUsuario.password,
+        usuario: existeUsuario.usuario
     };
+
     localStorage.setItem('logueado', JSON.stringify(usuarioLogueado));
     window.location.href = 'neighbors.html'; 
 }
+
 loginForm.addEventListener('submit', ingresarUsuario);
