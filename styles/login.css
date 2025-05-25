@@ -102,3 +102,16 @@ a:hover {
     color: gray;
 }
 
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-field i {
+    position: absolute;
+    top: 25%;
+    right: 21%;
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+}
