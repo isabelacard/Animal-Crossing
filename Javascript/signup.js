@@ -23,7 +23,7 @@ function registrarUsuario(e) {
   const usuario = {
     nameAndSurname: nameAndSurnameValor,
     email: emailValor,
-    user: userValor,
+    usuario: userValor,
     password: passwordValor,
   };
 

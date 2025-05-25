@@ -1,21 +1,23 @@
-const usuarios = [
+const usuariosPorDefecto = [
     {
         nombre: "Mariana",
         apellido: "Cerón",
         email: "mariana@gmail.com",
         password: "1234",
-        usuario: "mariana"
+        usuario: "marianacv"
     },
     {
         nombre: "Isabela",
         apellido: "Cardona",
         email: "isabela@gmail.com",
         password: "abcd",
-        usuario: "isabela"
+        usuario: "isabelacv"
     },
 ];
 
-localStorage.setItem('usuarios', JSON.stringify(usuarios));
+if (!localStorage.getItem('usuarios')) {
+    localStorage.setItem('usuarios', JSON.stringify(usuariosPorDefecto));
+}
 
 const loginForm = document.getElementById('loginForm');
 
@@ -38,13 +40,12 @@ function ingresarUsuario(e) {
         return;
     }
 
-    const usuarioLogueado = {
-        nombre: existeUsuario.nombre,
-        apellido: existeUsuario.apellido,
-        email: existeUsuario.email,
-        password: existeUsuario.password,
-        usuario: existeUsuario.usuario
-    };
+const usuarioLogueado = {
+    nameAndSurname: existeUsuario.nameAndSurname,
+    email: existeUsuario.email,
+    password: existeUsuario.password,
+    usuario: existeUsuario.usuario
+};
 
     localStorage.setItem('logueado', JSON.stringify(usuarioLogueado));
     window.location.href = 'neighbors.html'; 

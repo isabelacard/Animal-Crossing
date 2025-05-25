@@ -98,7 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    document.getElementById('profile-name').textContent = `${logueado.nombre || ''} ${logueado.apellido || ''}`.trim() || logueado.nombreCompleto || 'Sin nombre';
+    document.getElementById('profile-name').textContent = logueado.nameAndSurname || 'Sin nombre';
     document.getElementById('profile-email').textContent = logueado.email || 'Sin email';
     document.getElementById('profile-username').textContent = logueado.usuario || 'Sin usuario';
     document.getElementById('profile-password').textContent = logueado.password || '******';
