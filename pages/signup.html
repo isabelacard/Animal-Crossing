@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Fredoka' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/eda95ca3ea.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/signup.css">
     <link rel="shortcut icon" href="../assets/icono.ico" type="image/x-icon">
     <title>sign up</title>
@@ -32,7 +33,10 @@
                 </div>
                 <div class="datos2">
                     <input type="text" id="user" placeholder="User" required>
-                    <input type="password" id="password" placeholder="Password" required>
+                    <div class="campo password-field">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <i id="togglePassword" class="fa fa-eye"></i>
+                    </div>
                 </div>
                 <button id="signin-btn" type="submit">Sign in</button>
             </form>
