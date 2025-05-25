@@ -83,7 +83,7 @@ if (searchInput) {
         const query = searchInput.value.toLowerCase();
 
         const filteredNeighborsDay = neighborsOfTheDay.filter(n => n.name?.toLowerCase().includes(query));
-        const filteredFavorites = favoriteNeighbors.filter(n => n.name?.toLowerCase().includes(query));
+        const filteredFavorites = discoverNeighbors.filter(n => n.name?.toLowerCase().includes(query));
 
         renderNeighbors(filteredNeighborsDay, '.neighbors');
         renderNeighbors(filteredFavorites, '.favorites');
