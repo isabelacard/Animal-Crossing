@@ -1,4 +1,11 @@
 const neighbors = [
+    { name: "Eloise", image: "../assets/favoriteneighbor1.png" },
+    { name: "Roald", image: "../assets/favoriteneighbor2.png" },
+    { name: "Labelle", image: "../assets/favoriteneighbor3.png" },
+    { name: "Raymond", image: "../assets/characteroftheday9.png" },
+    { name: "Cherry", image: "../assets/characteroftheday10.png" },
+    { name: "Marshal", image: "../assets/characteroftheday11.png" },
+    { name: "Audie", image: "../assets/characteroftheday12.png" },
     { name: "Pecan", image: "../assets/characteroftheday1.png" },
     { name: "Ribbot", image: "../assets/characteroftheday2.png" },
     { name: "Molly", image: "../assets/characteroftheday3.png" },
@@ -7,17 +14,25 @@ const neighbors = [
     { name: "Loli", image: "../assets/characteroftheday6.png" },
     { name: "Rolf", image: "../assets/characteroftheday7.png" },
     { name: "Tom Nook", image: "../assets/characteroftheday8.png" },
-    { name: "Eloise", image: "../assets/favoriteneighbor1.png" },
-    { name: "Roald", image: "../assets/favoriteneighbor2.png" },
-    { name: "Labelle", image: "../assets/favoriteneighbor3.png" },
-    { name: "Raymond", image: "../assets/characteroftheday9.png" },
-    { name: "Cherry", image: "../assets/characteroftheday10.png" },
-    { name: "Marshal", image: "../assets/characteroftheday11.png" },
-    { name: "Audie", image: "../assets/characteroftheday12.png" }
 ];
 
-const neighborsOfTheDay = neighbors.slice(0, 8);
-const favoriteNeighbors = neighbors.slice(8);
+function getMinuteRandomNeighbors(allNeighbors, count = 8) {
+    const now = new Date();
+    const minuteSeed = now.getMinutes(); 
+
+    const shuffled = [...allNeighbors];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = (minuteSeed + i * 31) % shuffled.length;
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled.slice(0, count);
+}
+
+const neighborsOfTheDay = getMinuteRandomNeighbors(neighbors); 
+const discoverNeighbors = neighbors; 
+
 
 function renderNeighbors(neighborsArray, containerSelector) {
     const container = document.querySelector(containerSelector);
@@ -60,7 +75,7 @@ function renderNeighbors(neighborsArray, containerSelector) {
 }
 
 renderNeighbors(neighborsOfTheDay, '.neighbors');
-renderNeighbors(favoriteNeighbors, '.favorites');
+renderNeighbors(discoverNeighbors, '.favorites');
 
 const searchInput = document.getElementById('search');
 if (searchInput) {
