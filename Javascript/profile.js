@@ -111,7 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
 //CONTRASEÑA FORM
 
     const passwordElement = document.getElementById('profile-password');
-    if (passwordElement) passwordElement.textContent = '******';
+    if (passwordElement) passwordElement.textContent = '****';
 
     const keyFavorites = `favorites_${logueado.usuario}`;
     const userFavorites = JSON.parse(localStorage.getItem(keyFavorites)) || [];
@@ -127,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 togglePasswordIcon.classList.remove('fa-eye-slash');
                 togglePasswordIcon.classList.add('fa-eye');
             } else {
-                passwordElement.textContent = '******';
+                passwordElement.textContent = '****';
                 togglePasswordIcon.classList.remove('fa-eye');
                 togglePasswordIcon.classList.add('fa-eye-slash');
             }
