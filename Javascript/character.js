@@ -1,229 +1,37 @@
-const neighbors = [
-    {
-        name: "Pecan",
-        image: "../assets/characteroftheday1.png",
-        phrase: "Sweeten your life.",
-        species: "Squirrel",
-        gender: "Female",
-        birthday: "September 10",
-        zodiac: "Virgo",
-        clothing: "Purple dress",
-        island: "Resident of Acorn Island",
-        personality: "Snooty",
-        prevPhrases: "chipmunk",
-        debut: "AC: Population Growing",
-        catchphrase: "chipmunk"
-    },
-    {
-        name: "Ribbot",
-        image: "../assets/characteroftheday2.png",
-        phrase: "Never rest, never oxide.",
-        species: "Frog",
-        gender: "Male",
-        birthday: "February 13",
-        zodiac: "Aquarius",
-        clothing: "Simple parka",
-        island: "Not a resident of the island",
-        personality: "Jock",
-        prevPhrases: "toady",
-        debut: "DNM",
-        catchphrase: "ZZRRBBIT"
-    },
-    {
-        name: "Molly",
-        image: "../assets/characteroftheday3.png",
-        phrase: "Quackidee.",
-        species: "Duck",
-        gender: "Female",
-        birthday: "March 7",
-        zodiac: "Pisces",
-        clothing: "Yellow cardigan",
-        island: "Resident",
-        personality: "Normal",
-        prevPhrases: "quackidee",
-        debut: "NL",
-        catchphrase: "quackidee"
-    },
-    {
-        name: "Static",
-        image: "../assets/characteroftheday4.png",
-        phrase: "Cranky but cute.",
-        species: "Squirrel",
-        gender: "Male",
-        birthday: "July 9",
-        zodiac: "Cancer",
-        clothing: "Lightning tee",
-        island: "Resident",
-        personality: "Cranky",
-        prevPhrases: "krzzt",
-        debut: "AC",
-        catchphrase: "krzzt"
-    },
-    {
-        name: "Fauna",
-        image: "../assets/characteroftheday5.png",
-        phrase: "The first step is always the hardest.",
-        species: "Deer",
-        gender: "Female",
-        birthday: "March 26",
-        zodiac: "Aries",
-        clothing: "Red sweater",
-        island: "Resident",
-        personality: "Normal",
-        prevPhrases: "dearie",
-        debut: "NL",
-        catchphrase: "dearie"
-    },
-    {
-        name: "Loli",
-        image: "../assets/characteroftheday6.png",
-        phrase: "Always be yourself.",
-        species: "Cat",
-        gender: "Female",
-        birthday: "March 27",
-        zodiac: "Aries",
-        clothing: "Blue dress",
-        island: "Resident",
-        personality: "Normal",
-        prevPhrases: "bonbon",
-        debut: "NH",
-        catchphrase: "bonbon"
-    },
-    {
-        name: "Rolf",
-        image: "../assets/characteroftheday7.png",
-        phrase: "Patience is a virtue.",
-        species: "Tiger",
-        gender: "Male",
-        birthday: "August 22",
-        zodiac: "Leo",
-        clothing: "Tiger tee",
-        island: "Resident",
-        personality: "Cranky",
-        prevPhrases: "grr",
-        debut: "AC",
-        catchphrase: "grr"
-    },
-    {
-        name: "Tom Nook",
-        image: "../assets/characteroftheday8.png",
-        phrase: "Yes, yes!",
-        species: "Raccoon",
-        gender: "Male",
-        birthday: "May 30",
-        zodiac: "Gemini",
-        clothing: "Business suit",
-        island: "Special character",
-        personality: "Business",
-        prevPhrases: "hm?",
-        debut: "DNM",
-        catchphrase: "hm?"
-    },
-    {
-        name: "Eloise",
-        image: "../assets/favoriteneighbor1.png",
-        phrase: "If you want something done right, do it yourself.",
-        species: "Elephant",
-        gender: "Female",
-        birthday: "December 8",
-        zodiac: "Sagittarius",
-        clothing: "Yellow dress",
-        island: "Resident",
-        personality: "Snooty",
-        prevPhrases: "tootie",
-        debut: "AC",
-        catchphrase: "tootie"
-    },
-    {
-        name: "Roald",
-        image: "../assets/favoriteneighbor2.png",
-        phrase: "You must learn to waddle before you can swim.",
-        species: "Penguin",
-        gender: "Male",
-        birthday: "January 5",
-        zodiac: "Capricorn",
-        clothing: "Blue jacket",
-        island: "Resident",
-        personality: "Jock",
-        prevPhrases: "b-b-buddy",
-        debut: "AC",
-        catchphrase: "b-b-buddy"
-    },
-    {
-        name: "Labelle",
-        image: "../assets/favoriteneighbor3.png",
-        phrase: "Fashion first!",
-        species: "Hedgehog",
-        gender: "Female",
-        birthday: "October 31",
-        zodiac: "Scorpio",
-        clothing: "Fashionable dress",
-        island: "Special character",
-        personality: "Fashionista",
-        prevPhrases: "label",
-        debut: "CF",
-        catchphrase: "label"
-    },
-    {
-        name: "Raymond",
-        image: "../assets/characteroftheday9.png",
-        phrase: "Stay on brand!",
-        species: "Cat",
-        gender: "Male",
-        birthday: "October 1",
-        zodiac: "Libra",
-        clothing: "Business suit",
-        island: "Resident",
-        personality: "Smug",
-        prevPhrases: "crisp",
-        debut: "NH",
-        catchphrase: "crisp"
-    },
-    {
-        name: "Cherry",
-        image: "../assets/characteroftheday10.png",
-        phrase: "What what!",
-        species: "Dog",
-        gender: "Female",
-        birthday: "May 11",
-        zodiac: "Taurus",
-        clothing: "Punk outfit",
-        island: "Resident",
-        personality: "Sisterly",
-        prevPhrases: "what what",
-        debut: "NL",
-        catchphrase: "what what"
-    },
-    {
-        name: "Marshal",
-        image: "../assets/characteroftheday11.png",
-        phrase: "Seize the day.",
-        species: "Squirrel",
-        gender: "Male",
-        birthday: "September 29",
-        zodiac: "Libra",
-        clothing: "Vest",
-        island: "Resident",
-        personality: "Smug",
-        prevPhrases: "sulky",
-        debut: "NL",
-        catchphrase: "sulky"
-    },
-    {
-        name: "Audie",
-        image: "../assets/characteroftheday12.png",
-        phrase: "Be positive!",
-        species: "Wolf",
-        gender: "Female",
-        birthday: "August 31",
-        zodiac: "Virgo",
-        clothing: "Orange dress",
-        island: "Resident",
-        personality: "Peppy",
-        prevPhrases: "foxtrot",
-        debut: "NH",
-        catchphrase: "foxtrot"
+class Neighbor {
+    constructor(name, image, phrase, species, gender, birthday, zodiac, clothing, island, personality, prevPhrases, debut, catchphrase) {
+        this.name = name;
+        this.image = image;
+        this.phrase = phrase;
+        this.species = species;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.zodiac = zodiac;
+        this.clothing = clothing;
+        this.island = island;
+        this.personality = personality;
+        this.prevPhrases = prevPhrases;
+        this.debut = debut;
+        this.catchphrase = catchphrase;
     }
+}
+
+const neighbors = [
+    new Neighbor("Pecan", "../assets/characteroftheday1.png", "Sweeten your life.", "Squirrel", "Female", "September 10", "Virgo", "Purple dress", "Resident of Acorn Island", "Snooty", "chipmunk", "AC: Population Growing", "chipmunk"),
+    new Neighbor("Ribbot", "../assets/characteroftheday2.png", "Never rest, never oxide.", "Frog", "Male", "February 13", "Aquarius", "Simple parka", "Not a resident of the island", "Jock", "toady", "DNM", "ZZRRBBIT"),
+    new Neighbor("Molly", "../assets/characteroftheday3.png", "Quackidee.", "Duck", "Female", "March 7", "Pisces", "Yellow cardigan", "Resident", "Normal", "quackidee", "NL", "quackidee"),
+    new Neighbor("Static", "../assets/characteroftheday4.png", "Cranky but cute.", "Squirrel", "Male", "July 9", "Cancer", "Lightning tee", "Resident", "Cranky", "krzzt", "AC", "krzzt"),
+    new Neighbor("Fauna", "../assets/characteroftheday5.png", "The first step is always the hardest.", "Deer", "Female", "March 26", "Aries", "Red sweater", "Resident", "Normal", "dearie", "NL", "dearie"),
+    new Neighbor("Loli", "../assets/characteroftheday6.png", "Always be yourself.", "Cat", "Female", "March 27", "Aries", "Blue dress", "Resident", "Normal", "bonbon", "NH", "bonbon"),
+    new Neighbor("Rolf", "../assets/characteroftheday7.png", "Patience is a virtue.", "Tiger", "Male", "August 22", "Leo", "Tiger tee", "Resident", "Cranky", "grr", "AC", "grr"),
+    new Neighbor("Tom Nook", "../assets/characteroftheday8.png", "Yes, yes!", "Raccoon", "Male", "May 30", "Gemini", "Business suit", "Special character", "Business", "hm?", "DNM", "hm?"),
+    new Neighbor("Eloise", "../assets/favoriteneighbor1.png", "If you want something done right, do it yourself.", "Elephant", "Female", "December 8", "Sagittarius", "Yellow dress", "Resident", "Snooty", "tootie", "AC", "tootie"),
+    new Neighbor("Roald", "../assets/favoriteneighbor2.png", "You must learn to waddle before you can swim.", "Penguin", "Male", "January 5", "Capricorn", "Blue jacket", "Resident", "Jock", "b-b-buddy", "AC", "b-b-buddy"),
+    new Neighbor("Labelle", "../assets/favoriteneighbor3.png", "Fashion first!", "Hedgehog", "Female", "October 31", "Scorpio", "Fashionable dress", "Special character", "Fashionista", "label", "CF", "label"),
+    new Neighbor("Raymond", "../assets/characteroftheday9.png", "Stay on brand!", "Cat", "Male", "October 1", "Libra", "Business suit", "Resident", "Smug", "crisp", "NH", "crisp"),
+    new Neighbor("Cherry", "../assets/characteroftheday10.png", "What what!", "Dog", "Female", "May 11", "Taurus", "Punk outfit", "Resident", "Sisterly", "what what", "NL", "what what"),
+    new Neighbor("Marshal", "../assets/characteroftheday11.png", "Seize the day.", "Squirrel", "Male", "September 29", "Libra", "Vest", "Resident", "Smug", "sulky", "NL", "sulky"),
+    new Neighbor("Audie", "../assets/characteroftheday12.png", "Be positive!", "Wolf", "Female", "August 31", "Virgo", "Orange dress", "Resident", "Peppy", "foxtrot", "NH", "foxtrot")
 ];
 
 const busqueda = new URLSearchParams(window.location.search);

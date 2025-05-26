@@ -1,19 +1,26 @@
+class Neighbor {
+    constructor(name, image) {
+        this.name = name;
+        this.image = image;
+    }
+}
+
 const neighbors = [
-    { name: "Eloise", image: "../assets/favoriteneighbor1.png" },
-    { name: "Roald", image: "../assets/favoriteneighbor2.png" },
-    { name: "Labelle", image: "../assets/favoriteneighbor3.png" },
-    { name: "Raymond", image: "../assets/characteroftheday9.png" },
-    { name: "Cherry", image: "../assets/characteroftheday10.png" },
-    { name: "Marshal", image: "../assets/characteroftheday11.png" },
-    { name: "Audie", image: "../assets/characteroftheday12.png" },
-    { name: "Pecan", image: "../assets/characteroftheday1.png" },
-    { name: "Ribbot", image: "../assets/characteroftheday2.png" },
-    { name: "Molly", image: "../assets/characteroftheday3.png" },
-    { name: "Static", image: "../assets/characteroftheday4.png" },
-    { name: "Fauna", image: "../assets/characteroftheday5.png" },
-    { name: "Loli", image: "../assets/characteroftheday6.png" },
-    { name: "Rolf", image: "../assets/characteroftheday7.png" },
-    { name: "Tom Nook", image: "../assets/characteroftheday8.png" },
+    new Neighbor("Eloise", "../assets/favoriteneighbor1.png"),
+    new Neighbor("Roald", "../assets/favoriteneighbor2.png"),
+    new Neighbor("Labelle", "../assets/favoriteneighbor3.png"),
+    new Neighbor("Raymond", "../assets/characteroftheday9.png"),
+    new Neighbor("Cherry", "../assets/characteroftheday10.png"),
+    new Neighbor("Marshal", "../assets/characteroftheday11.png"),
+    new Neighbor("Audie", "../assets/characteroftheday12.png"),
+    new Neighbor("Pecan", "../assets/characteroftheday1.png"),
+    new Neighbor("Ribbot", "../assets/characteroftheday2.png"),
+    new Neighbor("Molly", "../assets/characteroftheday3.png"),
+    new Neighbor("Static", "../assets/characteroftheday4.png"),
+    new Neighbor("Fauna", "../assets/characteroftheday5.png"),
+    new Neighbor("Loli", "../assets/characteroftheday6.png"),
+    new Neighbor("Rolf", "../assets/characteroftheday7.png"),
+    new Neighbor("Tom Nook", "../assets/characteroftheday8.png"),
 ];
 
 function getMinuteRandomNeighbors(allNeighbors, count = 8) {
@@ -81,7 +88,7 @@ const searchInput = document.getElementById('search');
 if (searchInput) {
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
-        
+
         const filteredNeighbors = neighbors.filter(n => n.name?.toLowerCase().includes(query));
 
         renderNeighbors(filteredNeighbors, '.neighbors');

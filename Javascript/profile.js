@@ -17,16 +17,23 @@ if (!localStorage.getItem('usuarios')) {
     localStorage.setItem('usuarios', JSON.stringify(usuariosPorDefecto));
 }
 
+class Neighbor {
+    constructor(name, image) {
+        this.name = name;
+        this.image = image;
+    }
+}
+
 const favoritosMariana = [
-    { name: "Eloise", image: "../assets/favoriteneighbor1.png" },
-    { name: "Labelle", image: "../assets/favoriteneighbor3.png" },
-    { name: "Roald", image: "../assets/favoriteneighbor2.png" },
+    new Neighbor("Eloise", "../assets/favoriteneighbor1.png"),
+    new Neighbor("Labelle", "../assets/favoriteneighbor3.png"),
+    new Neighbor("Roald", "../assets/favoriteneighbor2.png"),
 ];
 
 const favoritosIsabela = [
-    { name: "Raymond", image: "../assets/characteroftheday9.png" },
-    { name: "Loli", image: "../assets/characteroftheday6.png" },
-    { name: "Rolf", image: "../assets/characteroftheday7.png" },
+    new Neighbor("Raymond", "../assets/characteroftheday9.png"),
+    new Neighbor("Loli", "../assets/characteroftheday6.png"),
+    new Neighbor("Rolf", "../assets/characteroftheday7.png"),
 ];
 
 if (!localStorage.getItem('favorites_marianacv')) {
@@ -129,7 +136,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Footer form
+    //BUTTON FORM
     const footerForm = document.querySelector('footer form');
     if (footerForm) {
         footerForm.addEventListener('submit', function(e) {
