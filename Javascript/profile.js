@@ -3,13 +3,13 @@ const usuariosPorDefecto = [
         nameAndSurname: "Mariana Cerón",
         email: "mariana@gmail.com",
         password: "1234",
-        usuario: "marianacv"
+        usuario: "marianacv",
     },
     {
         nameAndSurname: "Isabela Cardona",
         email: "isabela@gmail.com",
         password: "abcd",
-        usuario: "isabelacv"
+        usuario: "isabelacv",
     },
 ];
 
@@ -101,16 +101,35 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('profile-name').textContent = logueado.nameAndSurname || 'Sin nombre';
     document.getElementById('profile-email').textContent = logueado.email || 'Sin email';
     document.getElementById('profile-username').textContent = logueado.usuario || 'Sin usuario';
-    document.getElementById('profile-password').textContent = logueado.password || '******';
+
+//CONTRASEÑA FORM
+
+    const passwordElement = document.getElementById('profile-password');
+    if (passwordElement) passwordElement.textContent = '******';
 
     const keyFavorites = `favorites_${logueado.usuario}`;
     const userFavorites = JSON.parse(localStorage.getItem(keyFavorites)) || [];
-
     renderFavorites('.favorites', userFavorites);
-});
 
-//BUTTON FORM
-document.addEventListener('DOMContentLoaded', function() {
+    const togglePasswordIcon = document.getElementById('togglePassword');
+    if (togglePasswordIcon && passwordElement) {
+        let isPasswordVisible = false;
+        togglePasswordIcon.classList.add('fa-eye-slash');
+        togglePasswordIcon.addEventListener('click', () => {
+            if (!isPasswordVisible) {
+                passwordElement.textContent = logueado.password;
+                togglePasswordIcon.classList.remove('fa-eye-slash');
+                togglePasswordIcon.classList.add('fa-eye');
+            } else {
+                passwordElement.textContent = '******';
+                togglePasswordIcon.classList.remove('fa-eye');
+                togglePasswordIcon.classList.add('fa-eye-slash');
+            }
+            isPasswordVisible = !isPasswordVisible;
+        });
+    }
+
+    // Footer form
     const footerForm = document.querySelector('footer form');
     if (footerForm) {
         footerForm.addEventListener('submit', function(e) {
