@@ -23,21 +23,21 @@ const neighbors = [
     new Neighbor("Tom Nook", "../assets/characteroftheday8.png"),
 ];
 
-function getMinuteRandomNeighbors(allNeighbors, count = 8) {
+function getDailyRandomNeighbors(allNeighbors, count = 8) {
     const now = new Date();
-    const minuteSeed = now.getMinutes(); 
+    const daySeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
 
     const shuffled = [...allNeighbors];
 
     for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = (minuteSeed + i * 31) % shuffled.length;
+        const j = (daySeed + i * 31) % shuffled.length;
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
 
     return shuffled.slice(0, count);
 }
 
-const neighborsOfTheDay = getMinuteRandomNeighbors(neighbors); 
+const neighborsOfTheDay = getDailyRandomNeighbors(neighbors);
 const discoverNeighbors = neighbors; 
 
 
