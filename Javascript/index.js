@@ -1,26 +1,21 @@
 //QUIENES SOMOS
 
-const characters = [
-    {
-        name: "Mariana",
-        gender: "female",
-        species: "human",
-        quote: "Everything happens for something",
-        birthday: "March 17th",
-        imgId: "imgmariana",
-        imgSrc: "./assets/charactermariana.png",
-        containerClass: "marianacontainer"
-    },
-    {
-        name: "Isabela",
-        gender: "female",
-        species: "human",
-        quote: "Do not stress, that stress me",
-        birthday: "October 28th",
-        imgId: "imgisabela",
-        imgSrc: "./assets/characterisabela.png",
-        containerClass: "isabelacontainer"
+class Character {
+    constructor(name, gender, species, quote, birthday, imgId, imgSrc, containerClass) {
+        this.name = name;
+        this.gender = gender;
+        this.species = species;
+        this.quote = quote;
+        this.birthday = birthday;
+        this.imgId = imgId;
+        this.imgSrc = imgSrc;
+        this.containerClass = containerClass;
     }
+}
+
+const characters = [
+    new Character("Mariana", "female", "human", "Everything happens for something", "March 17th", "imgmariana", "./assets/charactermariana.png", "marianacontainer"),
+    new Character("Isabela", "female", "human", "Do not stress, that stress me", "October 28th", "imgisabela", "./assets/characterisabela.png", "isabelacontainer")
 ];
 
 function renderCharacters() {

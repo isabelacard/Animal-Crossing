@@ -1,16 +1,15 @@
+class Usuario {
+    constructor(nameAndSurname, email, password, usuario) {
+        this.nameAndSurname = nameAndSurname;
+        this.email = email;
+        this.password = password;
+        this.usuario = usuario;
+    }
+}
+
 const usuariosPorDefecto = [
-    {
-        nameAndSurname: "Mariana Cerón",
-        email: "mariana@gmail.com",
-        password: "1234",
-        usuario: "marianacv",
-    },
-    {
-        nameAndSurname: "Isabela Cardona",
-        email: "isabela@gmail.com",
-        password: "abcd",
-        usuario: "isabelacv",
-    },
+    new Usuario("Mariana Cerón", "mariana@gmail.com", "1234", "marianacv"),
+    new Usuario("Isabela Cardona", "isabela@gmail.com", "abcd", "isabelacv"),
 ];
 
 if (!localStorage.getItem('usuarios')) {
