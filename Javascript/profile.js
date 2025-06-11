@@ -134,12 +134,23 @@ window.addEventListener('DOMContentLoaded', () => {
             isPasswordVisible = !isPasswordVisible;
         });
     }
+});
 
     //BUTTON FORM
+document.addEventListener('DOMContentLoaded', function() {
     const footerForm = document.querySelector('footer form');
     if (footerForm) {
         footerForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            const formData = new FormData(footerForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            localStorage.setItem('informacionForm', JSON.stringify(data));
+
             alert('¡Mensaje enviado correctamente!');
             footerForm.reset();
         });
