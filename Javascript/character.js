@@ -1,23 +1,25 @@
 class Neighbor {
-    constructor(name, image, phrase, species, gender, birthday, zodiac, clothing, island, personality, prevPhrases, debut, catchphrase) {
-        this.name = name;
-        this.image = image;
-        this.phrase = phrase;
-        this.species = species;
-        this.gender = gender;
-        this.birthday = birthday;
-        this.zodiac = zodiac;
-        this.clothing = clothing;
-        this.island = island;
-        this.personality = personality;
-        this.prevPhrases = prevPhrases;
-        this.debut = debut;
-        this.catchphrase = catchphrase;
+    constructor(apiData) {
+        this.name = apiData.name;
+        this.image = apiData.image_url;
+        this.phrase = apiData.quote || "";
+        this.species = apiData.species || "";
+        this.gender = apiData.gender || "";
+        this.birthday = apiData.birthday_month && apiData.birthday_day
+            ? `${apiData.birthday_month} ${apiData.birthday_day}`
+            : "";
+        this.zodiac = apiData.sign || "";
+        this.clothing = apiData.clothing || "";
+        this.island = apiData.islander ? "Islander" : "Resident";
+        this.personality = apiData.personality || "";
+        this.prevPhrases = (apiData.prev_phrases && apiData.prev_phrases.join(", ")) || "";
+        this.debut = apiData.debut || "";
+        this.catchphrase = apiData.phrase || "";
     }
 }
 
-const busqueda = new URLSearchParams(window.location.search);
-const namee = busqueda.get("name");
+const params = new URLSearchParams(window.location.search);
+const nameParam = params.get("name");
 
 async function fetchNeighborByName(name) {
     try {
