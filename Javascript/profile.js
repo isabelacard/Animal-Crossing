@@ -7,15 +7,6 @@ class Usuario {
     }
 }
 
-const usuariosPorDefecto = [
-    new Usuario("Mariana Cerón", "mariana@gmail.com", "1234", "marianacv"),
-    new Usuario("Isabela Cardona", "isabela@gmail.com", "abcd", "isabelacv"),
-];
-
-if (!localStorage.getItem('usuarios')) {
-    localStorage.setItem('usuarios', JSON.stringify(usuariosPorDefecto));
-}
-
 class Neighbor {
     constructor(name, image) {
         this.name = name;
