@@ -7,39 +7,11 @@ class Usuario {
     }
 }
 
-const usuariosPorDefecto = [
-    new Usuario("Mariana Cerón", "mariana@gmail.com", "1234", "marianacv"),
-    new Usuario("Isabela Cardona", "isabela@gmail.com", "abcd", "isabelacv"),
-];
-
-if (!localStorage.getItem('usuarios')) {
-    localStorage.setItem('usuarios', JSON.stringify(usuariosPorDefecto));
-}
-
 class Neighbor {
     constructor(name, image) {
         this.name = name;
         this.image = image;
     }
-}
-
-const favoritosMariana = [
-    new Neighbor("Eloise", "../assets/favoriteneighbor1.png"),
-    new Neighbor("Labelle", "../assets/favoriteneighbor3.png"),
-    new Neighbor("Roald", "../assets/favoriteneighbor2.png"),
-];
-
-const favoritosIsabela = [
-    new Neighbor("Raymond", "../assets/characteroftheday9.png"),
-    new Neighbor("Loli", "../assets/characteroftheday6.png"),
-    new Neighbor("Rolf", "../assets/characteroftheday7.png"),
-];
-
-if (!localStorage.getItem('favorites_marianacv')) {
-    localStorage.setItem('favorites_marianacv', JSON.stringify(favoritosMariana));
-}
-if (!localStorage.getItem('favorites_isabelacv')) {
-    localStorage.setItem('favorites_isabelacv', JSON.stringify(favoritosIsabela));
 }
 
 function renderFavorites(containerSelector, neighbors) {
