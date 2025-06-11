@@ -58,7 +58,15 @@
                     </div>
                 </div>
                 <div class="change">
-                    <p>¿Do you want to change your password? <a href="">Click here</a></p>
+                    <p>¿Do you want to change your password? <a href="#" id="changePasswordLink">Click here</a></p>
+                </div>
+
+                <div id="changePasswordForm" class="password-form" style="display: none;">
+                    <input type="text" id="newPassword" placeholder="New password" class="texto">
+                    <div class="password-row">
+                        <button id="confirmChangeBtn" class="buttonconfirmation">Change</button>
+                        <span id="passwordChangeMessage" class="mensaje-password"></span>
+                    </div>
                 </div>
             </div>
         </section>

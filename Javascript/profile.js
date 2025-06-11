@@ -172,6 +172,43 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+// PASSWORD CHANGE
+    const link = document.getElementById('changePasswordLink');
+    const form = document.getElementById('changePasswordForm');
+    const btn = document.getElementById('confirmChangeBtn');
+    const msg = document.getElementById('passwordChangeMessage');
+
+    if (link && form && btn && msg) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            form.style.display = 'block';
+        });
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const newPassword = document.getElementById('newPassword').value.trim();
+            if (!newPassword || newPassword.length < 4) {
+                msg.textContent = 'Password must be at least 4 characters.';
+                return;
+            }
+
+            const usuarios = JSON.parse(localStorage.getItem('usuarios'));
+            const index = usuarios.findIndex(u => u.usuario === logueado.usuario);
+            if (index !== -1) {
+                usuarios[index].password = newPassword;
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                logueado.password = newPassword;
+                localStorage.setItem('logueado', JSON.stringify(logueado));
+                msg.textContent = `Password changed successfully.`;
+
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            }
+        });
+    }
+
     //BUTTON FORM
     const footerForm = document.querySelector('footer form');
     if (footerForm) {
