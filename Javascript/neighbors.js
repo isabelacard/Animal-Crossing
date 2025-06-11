@@ -26,14 +26,11 @@ async function fetchNeighborsFromAPI() {
 function getDailyRandomNeighbors(allNeighbors, count = 8) {
     const now = new Date();
     const daySeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
-
     const shuffled = [...allNeighbors];
-
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = (daySeed + i * 31) % shuffled.length;
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-
     return shuffled.slice(0, count);
 }
 
