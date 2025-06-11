@@ -38,31 +38,39 @@ async function fetchNeighborByName(name) {
     }
 }
 
-const character = neighbors.find(n => n.name.toLowerCase() === namee?.toLowerCase());
+async function renderCharacter() {
+    if (!nameParam) {
+        document.querySelector(".charactersection").innerHTML = "<p>Character not found 😢</p>";
+        return;
+    }
+    const character = await fetchNeighborByName(nameParam);
 
-if (character) {
-    document.querySelector(".imgcharacter").src = character.image;
-    document.querySelector(".imgcharacter").alt = character.name;
+    if (character) {
+        document.querySelector(".imgcharacter").src = character.image;
+        document.querySelector(".imgcharacter").alt = character.name;
 
-    document.getElementById("name").textContent = character.name;
-    document.getElementById("phrase").textContent = `"${character.phrase}"`;
+        document.getElementById("name").textContent = character.name;
+        document.getElementById("phrase").textContent = `"${character.phrase}"`;
 
-    const infoItems = document.querySelectorAll(".firstinfo .infoitem p");
-    infoItems[0].textContent = character.species;
-    infoItems[1].textContent = character.gender;
-    infoItems[2].textContent = character.birthday;
-    infoItems[3].textContent = character.zodiac;
+        const infoItems = document.querySelectorAll(".firstinfo .infoitem p");
+        infoItems[0].textContent = character.species;
+        infoItems[1].textContent = character.gender;
+        infoItems[2].textContent = character.birthday;
+        infoItems[3].textContent = character.zodiac;
 
-    const secondInfo = document.querySelectorAll(".secondinfo .secondword");
-    secondInfo[0].textContent = character.catchphrase;
-    secondInfo[1].textContent = character.clothing;
-    secondInfo[2].textContent = character.island;
-    secondInfo[3].textContent = character.personality;
-    secondInfo[4].textContent = character.prevPhrases;
-    secondInfo[5].textContent = character.debut;
-} else {
-    document.querySelector(".charactersection").innerHTML = "<p>Character not found 😢</p>";
+        const secondInfo = document.querySelectorAll(".secondinfo .secondword");
+        secondInfo[0].textContent = character.catchphrase;
+        secondInfo[1].textContent = character.clothing;
+        secondInfo[2].textContent = character.island;
+        secondInfo[3].textContent = character.personality;
+        secondInfo[4].textContent = character.prevPhrases;
+        secondInfo[5].textContent = character.debut;
+    } else {
+        document.querySelector(".charactersection").innerHTML = "<p>Character not found 😢</p>";
+    }
 }
+
+renderCharacter();
 
 //BUTTON FORM
 document.addEventListener('DOMContentLoaded', function() {
