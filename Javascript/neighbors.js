@@ -100,33 +100,35 @@ function renderNeighbors(neighborsArray, containerSelector) {
     });
 }
 
-renderNeighbors(neighborsOfTheDay, '.neighbors');
-renderNeighbors(discoverNeighbors, '.favorites');
+document.addEventListener('DOMContentLoaded', async function() {
+    const allNeighbors = await fetchNeighborsFromAPI();
+    const neighborsOfTheDay = getDailyRandomNeighbors(allNeighbors, 8);
 
-const searchInput = document.getElementById('search');
-if (searchInput) {
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
+    renderNeighbors(neighborsOfTheDay, '.neighbors');
+    renderNeighbors(allNeighbors, '.favorites');
 
-        const filteredNeighbors = neighbors.filter(n => n.name?.toLowerCase().includes(query));
+    const searchInput = document.getElementById('search');
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
 
-        renderNeighbors(filteredNeighbors, '.neighbors');
+            const filtered = allNeighbors.filter(n => n.name?.toLowerCase().includes(query));
 
-        const favoritesContainer = document.querySelector('.favorites');
-        if (favoritesContainer) favoritesContainer.innerHTML = '';
+            renderNeighbors(filtered, '.neighbors');
 
-        const titleNeighbors = document.querySelector('.neighbors h2');
-        const neighborsContainer = document.querySelector('.neighbors');
+            const neighborsTitle = document.querySelector('.neighbors h2');
+            const neighborsContainer = document.querySelector('.neighbors');
 
-        if (query.trim() !== '') {
-            if (titleNeighbors) titleNeighbors.style.display = 'none';
-            if (neighborsContainer) neighborsContainer.style.paddingTop = '70px';
-        } else {
-            if (titleNeighbors) titleNeighbors.style.display = '';
-            if (neighborsContainer) neighborsContainer.style.paddingTop = '';
-        }
-    });
-}
+            if (query.trim() !== '') {
+                if (neighborsTitle) neighborsTitle.style.display = 'none';
+                if (neighborsContainer) neighborsContainer.style.paddingTop = '70px';
+            } else {
+                if (neighborsTitle) neighborsTitle.style.display = '';
+                if (neighborsContainer) neighborsContainer.style.paddingTop = '';
+            }
+        });
+    }
+});
 
 //BUTTON FORM
 document.addEventListener('DOMContentLoaded', function() {
