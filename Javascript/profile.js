@@ -121,6 +121,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('profile-email').textContent = logueado.email || 'Sin email';
     document.getElementById('profile-username').textContent = logueado.usuario || 'Sin usuario';
 
+
 // CONTRASEÑA FORM
     const passwordElement = document.getElementById('profile-password');
     if (passwordElement) passwordElement.textContent = '****';
@@ -146,6 +147,8 @@ window.addEventListener('DOMContentLoaded', () => {
             isPasswordVisible = !isPasswordVisible;
         });
     }
+});
+
 
 // PASSWORD CHANGE
     const link = document.getElementById('changePasswordLink');
@@ -175,7 +178,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('usuarios', JSON.stringify(usuarios));
                 logueado.password = newPassword;
                 localStorage.setItem('logueado', JSON.stringify(logueado));
-                msg.textContent = `Password changed successfully. New password: ${newPassword}`;
+                msg.textContent = `Password changed successfully.`;
 
                 setTimeout(() => {
                     location.reload();
@@ -185,10 +188,20 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     //BUTTON FORM
+document.addEventListener('DOMContentLoaded', function() {
     const footerForm = document.querySelector('footer form');
     if (footerForm) {
         footerForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            const formData = new FormData(footerForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            localStorage.setItem('informacionForm', JSON.stringify(data));
+
             alert('¡Mensaje enviado correctamente!');
             footerForm.reset();
         });
