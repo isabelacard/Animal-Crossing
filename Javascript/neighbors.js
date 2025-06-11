@@ -23,6 +23,24 @@ const neighbors = [
     new Neighbor("Tom Nook", "../assets/characteroftheday8.png"),
 ];
 
+async function fetchNeighborsFromAPI() {
+    try {
+        const response = await fetch('https://api.nookipedia.com/villagers', {
+            headers: {
+                "X-API-KEY": "9b35898d-19d0-4efc-8150-292756fc7c5f",
+                "X-API-VERSION": "1.0.0"
+            }
+        });
+
+        const data = await response.json();
+
+        return data.map(v => new Neighbor(v.name, v.image_url));
+    } catch (error) {
+        console.error('Error al cargar vecinos desde la API:', error);
+        return [];
+    }
+}
+
 function getDailyRandomNeighbors(allNeighbors, count = 8) {
     const now = new Date();
     const daySeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
