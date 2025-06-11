@@ -7,14 +7,12 @@ class Usuario {
     }
 }
 
-
 class Neighbor {
     constructor(name, image) {
         this.name = name;
         this.image = image;
     }
 }
-
 
 function renderFavorites(containerSelector, neighbors) {
     const container = document.querySelector(containerSelector);
@@ -48,7 +46,6 @@ function renderFavorites(containerSelector, neighbors) {
         const p = document.createElement('p');
         p.id = 'nameneighbor';
         p.textContent = neighbor.name;
-
 
         if (neighbor.phrase) {
             const phrase = document.createElement('p');
@@ -121,8 +118,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('profile-email').textContent = logueado.email || 'Sin email';
     document.getElementById('profile-username').textContent = logueado.usuario || 'Sin usuario';
 
-
-// CONTRASEÑA FORM
+    // CONTRASEÑA FORM
     const passwordElement = document.getElementById('profile-password');
     if (passwordElement) passwordElement.textContent = '****';
 
@@ -147,10 +143,8 @@ window.addEventListener('DOMContentLoaded', () => {
             isPasswordVisible = !isPasswordVisible;
         });
     }
-});
 
-
-// PASSWORD CHANGE
+    // PASSWORD CHANGE
     const link = document.getElementById('changePasswordLink');
     const form = document.getElementById('changePasswordForm');
     const btn = document.getElementById('confirmChangeBtn');
@@ -186,8 +180,9 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
 
-    //BUTTON FORM
+//BUTTON FORM
 document.addEventListener('DOMContentLoaded', function() {
     const footerForm = document.querySelector('footer form');
     if (footerForm) {
