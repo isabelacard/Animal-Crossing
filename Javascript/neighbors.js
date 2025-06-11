@@ -37,15 +37,15 @@ function getDailyRandomNeighbors(allNeighbors, count = 8) {
     return shuffled.slice(0, count);
 }
 
-const neighborsOfTheDay = getDailyRandomNeighbors(neighbors);
-const discoverNeighbors = neighbors; 
-
-
 function renderNeighbors(neighborsArray, containerSelector) {
     const container = document.querySelector(containerSelector);
 
     const cards = container.querySelectorAll('.cardneighbor');
     cards.forEach(card => card.remove());
+
+    const logueado = JSON.parse(localStorage.getItem('logueado'));
+    const keyFavorites = logueado ? `favorites_${logueado.usuario}` : null;
+    const userFavorites = keyFavorites ? (JSON.parse(localStorage.getItem(keyFavorites)) || []) : [];
 
     neighborsArray.forEach(neighbor => {
         const card = document.createElement('a');
@@ -65,12 +65,31 @@ function renderNeighbors(neighborsArray, containerSelector) {
         name.id = 'nameneighbor';
 
         const icon = document.createElement('i');
-        icon.className = 'icon fa-regular fa-star';
+        const isFavorite = userFavorites.some(f => f.name === neighbor.name);
+        icon.className = isFavorite ? 'icon fa-solid fa-star' : 'icon fa-regular fa-star';
 
-        icon.addEventListener('click', function(event) {
+        icon.addEventListener('click', function (event) {
             event.preventDefault();
-            icon.classList.toggle('fa-regular');
-            icon.classList.toggle('fa-solid');
+            const logueado = JSON.parse(localStorage.getItem('logueado'));
+            if (!logueado) return;
+            const keyFavorites = `favorites_${logueado.usuario}`;
+            let userFavorites = JSON.parse(localStorage.getItem(keyFavorites)) || [];
+            const isFavorite = userFavorites.some(f => f.name === neighbor.name);
+
+            if (isFavorite) {
+                userFavorites = userFavorites.filter(f => f.name !== neighbor.name);
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+            } else {
+                userFavorites.push(neighbor); 
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+            }
+            localStorage.setItem(keyFavorites, JSON.stringify(userFavorites));
+
+            if (typeof renderFavorites === 'function') {
+                renderFavorites('.favorites', userFavorites);
+            }
         });
 
         content.appendChild(name);
