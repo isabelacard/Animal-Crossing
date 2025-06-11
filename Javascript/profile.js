@@ -7,12 +7,6 @@ class Usuario {
     }
 }
 
-class Neighbor {
-    constructor(name, image) {
-        this.name = name;
-        this.image = image;
-    }
-}
 
 function renderFavorites(containerSelector, neighbors) {
     const container = document.querySelector(containerSelector);
@@ -116,8 +110,6 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('profile-name').textContent = logueado.nameAndSurname || 'Sin nombre';
     document.getElementById('profile-email').textContent = logueado.email || 'Sin email';
     document.getElementById('profile-username').textContent = logueado.usuario || 'Sin usuario';
-
-//CONTRASEÑA FORM
 
     const passwordElement = document.getElementById('profile-password');
     if (passwordElement) passwordElement.textContent = '****';
