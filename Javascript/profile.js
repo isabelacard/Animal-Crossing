@@ -112,8 +112,13 @@ function renderFavorites(containerSelector, neighbors) {
 
         icon.addEventListener('click', (event) => {
             event.preventDefault();
-            icon.classList.toggle('fa-regular');
-            icon.classList.toggle('fa-solid');
+            const logueado = JSON.parse(localStorage.getItem('logueado'));
+            if (!logueado) return;
+            const keyFavorites = `favorites_${logueado.usuario}`;
+            let userFavorites = JSON.parse(localStorage.getItem(keyFavorites)) || [];
+            userFavorites = userFavorites.filter(f => f.name !== neighbor.name);
+            localStorage.setItem(keyFavorites, JSON.stringify(userFavorites));
+            renderFavorites(containerSelector, userFavorites);
         });
 
         cardContent.appendChild(p);
