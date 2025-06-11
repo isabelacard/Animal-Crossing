@@ -137,6 +137,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 // PASSWORD CHANGE
     const link = document.getElementById('changePasswordLink');
     const form = document.getElementById('changePasswordForm');
