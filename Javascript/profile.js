@@ -75,6 +75,38 @@ function renderFavorites(containerSelector, neighbors) {
         p.id = 'nameneighbor';
         p.textContent = neighbor.name;
 
+        if (neighbor.phrase) {
+            const phrase = document.createElement('p');
+            phrase.textContent = `"${neighbor.phrase}"`;
+            cardContent.appendChild(phrase);
+        }
+
+        if (neighbor.species || neighbor.gender) {
+            const info1 = document.createElement('p');
+            info1.textContent = `Species: ${neighbor.species || ''} | Gender: ${neighbor.gender || ''}`;
+            cardContent.appendChild(info1);
+        }
+        if (neighbor.birthday || neighbor.zodiac) {
+            const info2 = document.createElement('p');
+            info2.textContent = `Birthday: ${neighbor.birthday || ''} | Zodiac: ${neighbor.zodiac || ''}`;
+            cardContent.appendChild(info2);
+        }
+        if (neighbor.clothing || neighbor.island || neighbor.personality) {
+            const info3 = document.createElement('p');
+            info3.textContent = `Clothing: ${neighbor.clothing || ''} | Island: ${neighbor.island || ''} | Personality: ${neighbor.personality || ''}`;
+            cardContent.appendChild(info3);
+        }
+        if (neighbor.prevPhrases) {
+            const info4 = document.createElement('p');
+            info4.textContent = `Prev Phrases: ${neighbor.prevPhrases}`;
+            cardContent.appendChild(info4);
+        }
+        if (neighbor.debut || neighbor.catchphrase) {
+            const info5 = document.createElement('p');
+            info5.textContent = `Debut: ${neighbor.debut || ''} | Catchphrase: ${neighbor.catchphrase || ''}`;
+            cardContent.appendChild(info5);
+        }
+
         const icon = document.createElement('i');
         icon.className = 'icon fa-solid fa-star';
 
