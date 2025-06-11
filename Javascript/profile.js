@@ -8,6 +8,14 @@ class Usuario {
 }
 
 
+class Neighbor {
+    constructor(name, image) {
+        this.name = name;
+        this.image = image;
+    }
+}
+
+
 function renderFavorites(containerSelector, neighbors) {
     const container = document.querySelector(containerSelector);
     if (!container) return;
@@ -40,6 +48,7 @@ function renderFavorites(containerSelector, neighbors) {
         const p = document.createElement('p');
         p.id = 'nameneighbor';
         p.textContent = neighbor.name;
+
 
         if (neighbor.phrase) {
             const phrase = document.createElement('p');
@@ -76,6 +85,7 @@ function renderFavorites(containerSelector, neighbors) {
         const icon = document.createElement('i');
         icon.className = 'icon fa-solid fa-star';
 
+        //YAAAA
         icon.addEventListener('click', (event) => {
             event.preventDefault();
             const logueado = JSON.parse(localStorage.getItem('logueado'));
@@ -111,6 +121,8 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('profile-email').textContent = logueado.email || 'Sin email';
     document.getElementById('profile-username').textContent = logueado.usuario || 'Sin usuario';
 
+
+// CONTRASEÑA FORM
     const passwordElement = document.getElementById('profile-password');
     if (passwordElement) passwordElement.textContent = '****';
 
@@ -167,6 +179,43 @@ window.addEventListener('DOMContentLoaded', () => {
                 logueado.password = newPassword;
                 localStorage.setItem('logueado', JSON.stringify(logueado));
                 msg.textContent = `Password changed successfully.`;
+
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            }
+        });
+    }
+
+// PASSWORD CHANGE
+    const link = document.getElementById('changePasswordLink');
+    const form = document.getElementById('changePasswordForm');
+    const btn = document.getElementById('confirmChangeBtn');
+    const msg = document.getElementById('passwordChangeMessage');
+
+    if (link && form && btn && msg) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            form.style.display = 'block';
+        });
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const newPassword = document.getElementById('newPassword').value.trim();
+            if (!newPassword || newPassword.length < 4) {
+                msg.textContent = 'Password must be at least 4 characters.';
+                return;
+            }
+
+            const usuarios = JSON.parse(localStorage.getItem('usuarios'));
+            const index = usuarios.findIndex(u => u.usuario === logueado.usuario);
+            if (index !== -1) {
+                usuarios[index].password = newPassword;
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                logueado.password = newPassword;
+                localStorage.setItem('logueado', JSON.stringify(logueado));
+                msg.textContent = `Password changed successfully. New password: ${newPassword}`;
 
                 setTimeout(() => {
                     location.reload();
