@@ -5,41 +5,16 @@ class Neighbor {
     }
 }
 
-const neighbors = [
-    new Neighbor("Eloise", "../assets/favoriteneighbor1.png"),
-    new Neighbor("Roald", "../assets/favoriteneighbor2.png"),
-    new Neighbor("Labelle", "../assets/favoriteneighbor3.png"),
-    new Neighbor("Raymond", "../assets/characteroftheday9.png"),
-    new Neighbor("Cherry", "../assets/characteroftheday10.png"),
-    new Neighbor("Marshal", "../assets/characteroftheday11.png"),
-    new Neighbor("Audie", "../assets/characteroftheday12.png"),
-    new Neighbor("Pecan", "../assets/characteroftheday1.png"),
-    new Neighbor("Ribbot", "../assets/characteroftheday2.png"),
-    new Neighbor("Molly", "../assets/characteroftheday3.png"),
-    new Neighbor("Static", "../assets/characteroftheday4.png"),
-    new Neighbor("Fauna", "../assets/characteroftheday5.png"),
-    new Neighbor("Loli", "../assets/characteroftheday6.png"),
-    new Neighbor("Rolf", "../assets/characteroftheday7.png"),
-    new Neighbor("Tom Nook", "../assets/characteroftheday8.png"),
-];
-
 function getDailyRandomNeighbors(allNeighbors, count = 8) {
     const now = new Date();
     const daySeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
-
     const shuffled = [...allNeighbors];
-
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = (daySeed + i * 31) % shuffled.length;
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-
     return shuffled.slice(0, count);
 }
-
-const neighborsOfTheDay = getDailyRandomNeighbors(neighbors);
-const discoverNeighbors = neighbors; 
-
 
 function renderNeighbors(neighborsArray, containerSelector) {
     const container = document.querySelector(containerSelector);
