@@ -37,6 +37,22 @@ const neighbors = [
 const busqueda = new URLSearchParams(window.location.search);
 const namee = busqueda.get("name");
 
+async function fetchNeighborByName(name) {
+    try {
+        const response = await fetch(`https://api.nookipedia.com/villagers?name=${encodeURIComponent(name)}`, {
+            headers: {
+                "X-API-KEY": "9b35898d-19d0-4efc-8150-292756fc7c5f",
+                "Accept-Version": "1.0.0"
+            }
+        });
+        const data = await response.json();
+        const villager = data.find(v => v.name.toLowerCase() === name.toLowerCase()) || data[0];
+        return villager ? new Neighbor(villager) : null;
+    } catch (error) {
+        console.error("Error fetching neighbor:", error);
+        return null;
+    }
+}
 
 const character = neighbors.find(n => n.name.toLowerCase() === namee?.toLowerCase());
 
