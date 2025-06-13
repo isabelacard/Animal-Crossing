@@ -78,14 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (footerForm) {
         footerForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const formData = new FormData(footerForm);
             const data = {};
             formData.forEach((value, key) => {
                 data[key] = value;
             });
-            
-            localStorage.setItem('informacionForm', JSON.stringify(data));
+
+            let mensajes = JSON.parse(localStorage.getItem('informacionForm')) || [];
+            mensajes.push(data);
+            localStorage.setItem('informacionForm', JSON.stringify(mensajes));
 
             alert('¡Mensaje enviado correctamente!');
             footerForm.reset();
