@@ -1,3 +1,12 @@
+//PROTECCION ACCESO 
+document.addEventListener('DOMContentLoaded', function() {
+    const logueado = JSON.parse(localStorage.getItem('logueado'));
+    if (!logueado) {
+        window.location.href = 'login.html'; 
+        return;
+    }
+});
+
 class Usuario {
     constructor(nameAndSurname, email, password, usuario) {
         this.nameAndSurname = nameAndSurname;
